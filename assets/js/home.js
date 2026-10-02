@@ -157,8 +157,10 @@
     }
     emptyBox.hidden = true;
     grid.innerHTML = A.gridHTML(vis);
-    $('#moreBox').hidden = lista.length <= S.shown;
-    $('#btnMais').textContent = 'Carregar mais ' + Math.min(PER_PAGE, lista.length - S.shown) + ' imóveis';
+    var resta = lista.length - S.shown, n = Math.max(0, Math.min(PER_PAGE, resta));
+    $('#moreBox').hidden = resta <= 0;
+    $('#moreBox').style.display = resta <= 0 ? 'none' : '';   // garante que some mesmo com CSS próprio
+    $('#btnMais').textContent = 'Carregar mais ' + n + (n === 1 ? ' imóvel' : ' imóveis');
   }
 
   /* skeleton no primeiro render */
@@ -209,7 +211,7 @@
   $('#fDestaque').addEventListener('change', function () { S.destaque = this.checked; S.shown = PER_PAGE; render(); });
   $('#fFav').addEventListener('change', function () { S.fav = this.checked; S.shown = PER_PAGE; render(); });
   $('#fOrdem').addEventListener('change', function () { S.ordem = this.value; render(); });
-  $('#btnMais').addEventListener('click', function () { S.shown += PER_PAGE; render(); });
+  $('#btnMais').addEventListener('click', function () { if ($('#moreBox').hidden) return; S.shown += PER_PAGE; render(); });
 
   A.$$('.viewtoggle button').forEach(function (b) {
     b.addEventListener('click', function () {
