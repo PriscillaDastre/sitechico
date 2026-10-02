@@ -114,9 +114,9 @@
             '<div class="detail-block">' +
               '<h3>Localização</h3>' +
               '<div class="map" id="map" data-q="' + esc(q) + '"></div>' +
-              '<p style="margin-top:12px;font-size:.87rem;color:var(--muted);display:flex;gap:8px;align-items:center">' +
-                I.pin + esc(p.bairro) + ', ' + esc(p.cidade) + '/' + esc(p.uf || 'MG') +
-              '</p>' +
+              '<div class="detail-loc" style="margin-top:12px;font-size:.87rem">' +
+                I.pin + '<span>' + esc(p.bairro) + ', ' + esc(p.cidade) + '/' + esc(p.uf || 'MG') + '</span>' +
+              '</div>' +
             '</div>' +
           '</div>' +
 
@@ -247,11 +247,11 @@
     var box = $('#map'); if (!box) return;
     var q = encodeURIComponent(box.getAttribute('data-q'));
     var html = '<iframe title="Mapa da localização" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ' +
-      'src="https://www.openstreetmap.org/export/embed.html?bbox=-45.20%2C-22.75%2C-44.85%2C-22.55&layer=mapnik&marker=-22.9068%2C-45.4594"></iframe>';
+      'src="https://maps.google.com/maps?q=' + q + '&z=14&output=embed"></iframe>';
     // se a busca falhar, mostra link para abrir no mapa
     box.innerHTML = html +
       '<div style="position:absolute;bottom:10px;right:10px">' +
-        '<a class="btn btn-white btn-sm" target="_blank" rel="noopener" href="https://www.openstreetmap.org/search?query=' + q + '">' +
+        '<a class="btn btn-white btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + q + '">' +
           I.ext + 'Abrir mapa</a></div>';
     box.style.position = 'relative';
   }
