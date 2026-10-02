@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chico Marques · Corretor de Imóveis em Itajubá/MG</title>
+<meta name="description" content="Casas, apartamentos, terrenos, chácaras e imóveis comerciais em Itajubá e região. Compra, venda e aluguel com acompanhamento do corretor Chico Marques.">
+<meta name="theme-color" content="#0E5C4A">
+<meta property="og:title" content="Chico Marques · Corretor de Imóveis em Itajubá/MG">
+<meta property="og:description" content="Encontre casas, apartamentos e terrenos em Itajubá e região. Venda e aluguel.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230E5C4A'/><text x='50' y='68' font-size='46' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>CM</text></svg>">
+</head>
+<body id="top" data-page="home">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=2000&q=72" alt="" aria-hidden="true">
+  </div>
+  <div class="wrap">
+    <span class="hero-tag"><b>Itajubá</b> e região · desde 2022</span>
+    <h1>Do sonho à <em>realidade</em>, com um corretor do lado.</h1>
+    <p class="lead">Casas, apartamentos, terrenos, chácaras e pontos comerciais em Itajubá, Pouso Alegre e cidades vizinhas. Você escolhe, eu cuido do resto — da visita à assinatura.</p>
+    <div class="hero-actions">
+      <a class="btn btn-white" href="#imoveis">Ver imóveis disponíveis</a>
+      <a class="btn btn-light" id="heroWa">Falar no WhatsApp</a>
+    </div>
+
+    <!-- busca rápida -->
+    <form class="search" id="quickSearch" autocomplete="off">
+      <div class="search-field">
+        <span data-ic="search"></span>
+        <select name="tipo" id="qTipo" required><option value="" selected>Tipo de imóvel</option></select>
+      </div>
+      <div class="search-field">
+        <span data-ic="tag"></span>
+        <select name="finalidade" id="qFim" required>
+          <option value="">Venda ou aluguel</option>
+          <option value="venda">Comprar</option>
+          <option value="aluguel">Alugar</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <span data-ic="pin"></span>
+        <select name="local" id="qLocal" required><option value="" selected>Onde procurar</option></select>
+      </div>
+      <div class="search-field">
+        <span data-ic="money"></span>
+        <select name="preco" id="qPreco" required><option value="">Até quanto?</option></select>
+      </div>
+      <button class="btn btn-gold" type="submit">Buscar</button>
+    </form>
+  </div>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b data-stat="total">—</b><span>imóveis no site</span></div>
+      <div class="stat"><b data-stat="venda">—</b><span>à venda</span></div>
+      <div class="stat"><b data-stat="aluguel">—</b><span>para alugar</span></div>
+      <div class="stat"><b data-stat="cidades">—</b><span>cidades atendidas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOOLBAR DE FILTROS ===== -->
+<div class="toolbar" id="imoveis">
+  <div class="wrap">
+    <div class="toolbar-row">
+      <div class="chips" id="tipoChips"></div>
+      <div class="chips" style="flex:none">
+        <button class="chip" data-fim="venda">Comprar</button>
+        <button class="chip" data-fim="aluguel">Alugar</button>
+      </div>
+      <button class="filter-btn" id="btnFiltros" aria-expanded="false"></button>
+    </div>
+
+    <div class="filters" id="filtros">
+      <div class="filters-inner">
+        <div class="fgroup">
+          <label for="fCidade">Cidade</label>
+          <select id="fCidade"><option value="">Todas</option></select>
+        </div>
+        <div class="fgroup">
+          <label for="fBairro">Bairro</label>
+          <select id="fBairro"><option value="">Todos</option></select>
+        </div>
+        <div class="fgroup">
+          <label>Preço máximo</label>
+          <div class="price-row">
+            <select id="fPrecoMin"><option value="">mín.</option></select>
+            <span>até</span>
+            <select id="fPrecoMax"><option value="">máx.</option></select>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label for="fQuartos">Dormitórios</label>
+          <select id="fQuartos">
+            <option value="">Qualquer</option>
+            <option value="1">1+</option><option value="2">2+</option>
+            <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label for="fArea">Área mínima</label>
+          <select id="fArea">
+            <option value="">Qualquer</option>
+            <option value="50">50 m²+</option><option value="100">100 m²+</option>
+            <option value="150">150 m²+</option><option value="200">200 m²+</option>
+            <option value="500">500 m²+</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label>Extras</label>
+          <div class="chipset">
+            <label class="chk"><input type="checkbox" id="fDestaque"><span>Só destaques</span></label>
+            <label class="chk"><input type="checkbox" id="fFav"><span>Meus favoritos</span></label>
+          </div>
+        </div>
+        <div class="filt-actions">
+          <button class="btn btn-ghost btn-sm" id="btnLimpar">Limpar todos os filtros</button>
+          <span class="spacer"></span>
+          <button class="btn btn-primary btn-sm" id="btnFecharFiltros">Ver resultados</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GRID ===== -->
+<section class="section" style="padding-top:32px">
+  <div class="wrap">
+    <div class="result-bar">
+      <div class="result-count" id="resultCount">Carregando imóveis…</div>
+      <div class="result-right">
+        <label for="fOrdem">Ordenar por</label>
+        <select id="fOrdem">
+          <option value="relevancia">Relevância</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+          <option value="area">Maior área</option>
+          <option value="novo">Mais recentes</option>
+        </select>
+        <div class="viewtoggle" role="group" aria-label="Visualização">
+          <button data-view="grid" class="on" aria-label="Grade" id="vGrid"></button>
+          <button data-view="list" aria-label="Lista" id="vList"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div id="emptyBox" hidden></div>
+    <div style="display:flex;justify-content:center;margin-top:34px" id="moreBox" hidden>
+      <button class="btn btn-ghost" id="btnMais">Carregar mais imóveis</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BAIRROS ===== -->
+<section class="section" id="bairros" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Onde comprar</span>
+        <h2>Bairros de Itajubá que eu cubro</h2>
+        <p class="lead">Clique num bairro para ver só os imóveis disponíveis ali. Do Centro aos loteamentos da região, você escolhe onde quer morar — eu filtro o resto.</p>
+      </div>
+      <button class="btn btn-ghost" id="verTodos">Ver todos os imóveis</button>
+    </div>
+    <div class="neigh" id="neighGrid"></div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section class="band" id="sobre">
+  <div class="wrap band-grid">
+    <div>
+      <span class="eyebrow" style="color:#8FD6C2">Por que chamar um corretor</span>
+      <h2>Imóvel pronto ou construir? A resposta muda tudo.</h2>
+      <p class="lead">Muitos clientes chegam na dúvida entre comprar um imóvel já pronto e construir do zero. Não existe resposta certa sem entender o seu momento: o prazo, o caixa, a mudança de cidade, a escola dos filhos.</p>
+      <div class="pill-list">
+        <div class="pill-row"><span class="n">1</span><div><b>Levantamento do que você realmente precisa</b><span>Metragem, bairro, fluxo, vagas. Cortamos o que não é prioridade antes de visitar.</span></div></div>
+        <div class="pill-row"><span class="n">2</span><div><b>Curadoria, não catálogo</b><span>Você não recebe 200 imóveis. Recebe os 5 que fazem sentido para o seu caso.</span></div></div>
+        <div class="pill-row"><span class="n">3</span><div><b>Negociação com transparência</b><span>Cada proposta vem com o argumento por trás do número. Você decide com informação.</span></div></div>
+        <div class="pill-row"><span class="n">4</span><div><b>Até a assinatura</b><span>Documentação, contrato e acompanhamento final. Sem surpresa na última hora.</span></div></div>
+      </div>
+    </div>
+    <div class="quote">
+      <div class="quote-mark">“</div>
+      <p>O bom corretor não é o que mostra a casa mais bonita. É o que faz você entender por que aquela é a casa certa — e passar dormindo.</p>
+      <footer>
+        <span class="av">CM</span>
+        <div><b>Chico Marques</b><span>Corretor de imóveis · Itajubá/MG</span></div>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Dúvidas</span>
+        <h2>Perguntas que sempre chegam</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <details open><summary>Posso comprar com financiamento?</summary><div class="ans">Sim. Trabalho com os principais bancos da região e acompanho a aprovação da documentação, a análise de crédito e a assinatura com o registro do imóvel. Quanto mais limpa a documentação, mais rápido o processo.</div></details>
+      <details><summary>Vocês trabalham com aluguel também?</summary><div class="ans">Sim. Além de vendas, atendo locação de casas, apartamentos, salas e galpões — tanto para proprietários que querem ter o imóvel alugado quanto para quem busca morar ou montar negócio.</div></details>
+      <details><summary>Quanto é a comissão do corretor?</summary><div class="ans">A comissão varia conforme o tipo de operação e é combinada antes de qualquer anúncio. Nada é cobrado do cliente sem alinhamento prévio — é uma regra que não negocio.</div></details>
+      <details><summary>Posso anunciar meu imóvel com vocês?</summary><div class="ans">Pode. A área do corretor permite cadastrar o imóvel em poucos minutos, com fotos, valor, metragem e descrição. É só pedir o acesso — leva menos de um minuto para começar.</div></details>
+      <details><summary>Atendem cidades além de Itajubá?</summary><div class="ans">Sim. Atendo Itajubá, Pouso Alegre e região, incluindo Pedralva, Piranguinho, Delfim Moreira, Santa Rita do Sapucaí e São José do Alegre.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <h2>Quer ver o que tem na sua rua?</h2>
+      <p>Me chama no WhatsApp com o bairro e o valor que tem em mente. Se existir, eu acho — e se não existir, eu te aviso antes de você gastar tempo.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-white" id="ctaWa">Chamar no WhatsApp</a>
+      <a class="btn btn-light" href="contato.html">Enviar mensagem</a>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/app.js"></script>
+<script>CM.run('assets/js/home.js')</script>
+</body>
+</html>
