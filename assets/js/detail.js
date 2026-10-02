@@ -1,3 +1,4 @@
+/* detail.js — versão 3 */
 /* ============================================================
    detail.js — página de imóvel
    ============================================================ */
@@ -115,7 +116,7 @@
               '<h3>Localização</h3>' +
               '<div class="map" id="map" data-q="' + esc(q) + '"></div>' +
               '<div class="detail-loc" style="margin-top:12px;font-size:.87rem">' +
-                I.pin + '<span>' + esc(p.bairro) + ', ' + esc(p.cidade) + '/' + esc(p.uf || 'MG') + '</span>' +
+                '<span>' + esc(p.bairro) + ', ' + esc(p.cidade) + '/' + esc(p.uf || 'MG') + '</span>' +
               '</div>' +
             '</div>' +
           '</div>' +
